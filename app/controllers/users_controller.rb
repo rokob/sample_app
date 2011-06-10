@@ -16,6 +16,8 @@ class UsersController < ApplicationController
       redirect_to user_path(@user)  # just @user works, but not in rspec
     else
       @title = "Sign up"
+      @user.password = ""
+      @user.password_confirmation = ""
       render 'new'
     end
   end

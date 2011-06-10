@@ -50,6 +50,11 @@ describe UsersController do
       get :new
       response.should have_selector("title", :content => "Sign up")
     end
+
+    it "should have a name field" do
+      get :new
+     response.should have_selector("input[name='user[name]'][type='text']")
+    end
   end
 
   describe "POST 'create'" do
